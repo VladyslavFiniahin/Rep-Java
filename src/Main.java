@@ -2,14 +2,32 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.println("Hello and welcome!");
+        // Task 1.
+        System.out.println("Task 1");
+        int num1 = 52;
+        int num2 = 5;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        int task1 = num1 / num2;
+        int task2 = num1 % num2;
+
+        System.out.println("Результат ділення від " +num1 +" = " +task1);
+        System.out.println("Залишок ділення від " +num1 +" = " +task2);
+
+        // Task 2.
+        System.out.println("Task 2");
+        int num1_1 = 69;
+        int task1_1 = num1_1 / 10;
+        int task2_1 = num1_1 % 10;
+
+        int sum = task1_1 + task2_1;
+
+        System.out.println("Сума від " +num1_1 + " = " + sum);
+
+        //Task 3.
+        System.out.println("Task 3");
+        double num1_2 = 19.6;
+        int result = (int) (num1_2 + 0.5);
+
+        System.out.println("Округлене число = " +result);
     }
 }
