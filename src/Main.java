@@ -1,15 +1,28 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.println("Hello and welcome!");
+        SubClassOne one1 = new SubClassOne();
+        SubClassOne one2 = new SubClassOne(10);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        SubClassTwo two1 = new SubClassTwo();
+        SubClassTwo two2 = new SubClassTwo("Hello");
+
+        SubClassThree three1 = new SubClassThree();
+        SubClassThree three2 = new SubClassThree(5.5);
+
+        one1.showValue(5);
+        one1.showValue(5.5);
+
+        two1.showName("Test");
+        two1.showName(100);
+
+        three1.printInfo(3.14);
+        three1.printInfo("Java");
+
+        SubClassOne.display();
+        SubClassTwo.display();
+        SubClassThree.display();
+
+        two1.useOtherClassData(one2, three2);
     }
 }
