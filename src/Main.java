@@ -1,7 +1,29 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello and welcome!");
+        // 1. Наслідування (Animal)
+        Animal dog = new Dog("Bobik");
+        Animal cat = new Cat("Bertold");
+
+        dog.makeSound();
+        cat.makeSound();
+
+        Vehicle myCar = new Car("Tesla");
+        myCar.displayInfo();
+
+        Person person1 = new Person("Nastya", 19);
+        Person person2 = new Person("Anastasiia", 19);
+        System.out.println(person1);
+        System.out.println(person2);
+        System.out.println("Equal? " + person1.equals(person2));
+
+        Shape circle = new Circle(7);
+        Shape rectangle = new Rectangle(6, 8);
+        System.out.println("Circle area: " + circle.calculateArea());
+        System.out.println("Rectangle area: " + rectangle.calculateArea());
+
+        Movable car = new Car("BMW");
+        Movable bike = new Bike();
+        car.move();
+        bike.move();
     }
 }
