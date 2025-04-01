@@ -1,15 +1,30 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.List;
+import java.util.Comparator;
+
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.println("Hello and welcome!");
+        StudentManager manager = new StudentManager();
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        manager.addStudent(new Student(1, "Роман", 18, 61.9));
+        manager.addStudent(new Student(2, "Нікіта", 19, 77.7));
+        manager.addStudent(new Student(3, "Настя", 20, 92.7));
+        manager.addStudent(new Student(4, "Назар", 17, 78.1));
+
+        System.out.println("Сортування за середнім балом:");
+        List<Student> sortedByGrade = manager.getSortedStudents(Comparator.naturalOrder());
+        manager.displayStudents(sortedByGrade);
+
+        System.out.println("\nСортування за ім’ям:");
+        List<Student> sortedByName = manager.getSortedStudents(StudentComparator.byName);
+        manager.displayStudents(sortedByName);
+
+        System.out.println("\nСортування за віком:");
+        List<Student> sortedByAge = manager.getSortedStudents(StudentComparator.byAge);
+        manager.displayStudents(sortedByAge);
+
+        System.out.println("\nВидалення студента з ID 2:");
+        manager.removeStudent(2);
+        manager.displayStudents(manager.getSortedStudents(Comparator.naturalOrder()));
     }
 }
