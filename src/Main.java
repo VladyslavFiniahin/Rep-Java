@@ -1,15 +1,37 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.println("Hello and welcome!");
+        //завдання 1
+        ShoppingCart cart = new ShoppingCart();
+        cart.addProduct(new Electronics("Смартфон", 29000));
+        cart.addProduct(new Clothing("Штани", 100));
+        cart.showCart();
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        //завдання 2
+        GradeBook gradeBook = new GradeBook();
+        Student student1 = new Undergraduate("Роман");
+        student1.addGrade("Java", 75);
+        student1.addGrade("ОШІ", 55);
+        gradeBook.addStudent(student1);
+
+        Student student2 = new Graduate("Нікіта");
+        student2.addGrade("ОТ", 90);
+        gradeBook.addStudent(student2);
+
+        System.out.println("Перездача:");
+        for (Student student : gradeBook.getFailedStudents()) {
+            System.out.println(student.name);
         }
+
+        //завдання 3
+        CustomerDatabase customerDB = new CustomerDatabase();
+        Customer c1 = new Customer("Роман", "roman@email.com", "09674738");
+        Customer c2 = new Customer("Нікіта", "nikita@email.com", "096457383");
+        Customer c3 = new Customer("Настя", "nastya@email.com", "096647483");
+
+        customerDB.addCustomer(c1);
+        customerDB.addCustomer(c2);
+        customerDB.addCustomer(c3);
+
+        System.out.println("Роман в базі " + customerDB.containsCustomer(c1));
     }
 }
